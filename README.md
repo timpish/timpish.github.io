@@ -1,1 +1,1 @@
-# timpish.github.io
+# timpish.github.io ➔ timpish.com
