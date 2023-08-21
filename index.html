@@ -11,9 +11,9 @@
             "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
             "Courier New", monospace;
         font-family: var(--font-base);
-        font-size: calc(.25vw + 1em);
-        --measure: 66ch;
-        --ratio: 1.2;
+        font-size: calc(.27vw + 1em);
+        --measure: 57ch;
+        --ratio: 1.27;
         --line-height: var(--ratio);
         line-height: var(--ratio);
         --s-3: calc(var(--s-2) / var(--ratio));
@@ -25,21 +25,38 @@
         --s3: calc(var(--s2) * var(--ratio));
         --s4: calc(var(--s3) * var(--ratio));
         --s5: calc(var(--s4) * var(--ratio));
-        --border-thin: var(--s5);
-        --border-thick: var(--s-3);
+        --border-thin: var(--s-3);
+        --border-thick: var(--s5);
         --color-light: #f7f7f7;
         --color-dark: #080808;
         background-color: var(--color-dark);
         color: var(--color-light);
         margin: var(--s5);
+        --track-out: .27ch;
+    }
+
+    * {
+        outline: hotpink dashed 1px !important;
+        border: cornflowerblue dashed 1px !important;
+        padding: var(--s-3);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-weight: normal;
     }
 
     h1 {
         font-size: var(--s5);
+
     }
 
     h2 {
         font-size: var(--s3);
+
     }
 
     h3 {
@@ -54,9 +71,8 @@
         font-size: var(--s-1);
     }
 
-    * {
-        border: 1px dashed hotpink !important;
-        outline: dashed 1px cornflowerblue !important;
+    .track-out {
+        letter-spacing: var(--track-out);
     }
 </style>
 
@@ -64,7 +80,7 @@
     <h3>timpish.com</h3>
     <h1>Tim Martens</h1>
     <h4>Product Design ∴ Design Strategy ∴ Design Technology</h4>
-    <h5>Status: Play</h5>
+    <h5>Status: <span class="track-out">PLAY</span></h5>
     <h2>ui@timpish.com</h2>
 </body>
 
