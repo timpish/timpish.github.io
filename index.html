@@ -27,18 +27,15 @@
         --s5: calc(var(--s4) * var(--ratio));
         --border-thin: var(--s-3);
         --border-thick: var(--s5);
-        --color-light: #f7f7f7;
-        --color-dark: #080808;
+        --color-light: hsl(0, 0%, 97%);
+        --color-neutral: hsl(0, 0%, 50%);
+        --color-dark: hsl(0, 0%, 3%);
+        --color-cornflowerblue: hsl(219, 79%, 66%);
+        --color-hotpink: hsl(330, 100%, 71%);
         background-color: var(--color-dark);
         color: var(--color-light);
         margin: var(--s5);
         --track-out: .27ch;
-    }
-
-    * {
-        outline: hotpink dashed 1px !important;
-        border: cornflowerblue dashed 1px !important;
-        padding: var(--s-3);
     }
 
     h1,
@@ -47,6 +44,9 @@
     h4,
     h5 {
         font-weight: normal;
+        border: var(--color-hotpink) dashed 1px !important;
+        outline: var(--color-cornflowerblue) dashed 1px !important;
+        padding: var(--s-3);
     }
 
     h1 {
@@ -74,14 +74,18 @@
     .track-out {
         letter-spacing: var(--track-out);
     }
+
+    .inconspicuous {
+        color: var(--color-neutral);
+    }
 </style>
 
 <body>
-    <h4>timpish.com</h4>
+    <h4>timpish<span class="inconspicuous">.</span>com</h4>
     <h1>Tim Martens</h1>
-    <h3>Product Design ∴ Design Strategy ∴ Design Technology</h3>
-    <h5>Status: <span class="track-out">PLAY</span></h5>
-    <h2>ui@timpish.com</h2>
+    <h3>Product Design <span class="inconspicuous">∴</span> Design Strategy <span class="inconspicuous">∴</span> Design Technology</h3>
+    <h5>Status<span class="inconspicuous">:</span> <span class="track-out">PLAY</span></h5>
+    <h2>ui<span class="inconspicuous">@</span>timpish<span class="inconspicuous">.</span>com</h2>
 </body>
 
 </html>
