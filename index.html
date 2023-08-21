@@ -34,8 +34,8 @@
         --color-hotpink: hsl(330, 100%, 71%);
         background-color: var(--color-dark);
         color: var(--color-light);
-        margin: var(--s5);
-        --track-out: .27ch;
+        /* margin: var(--s5); */
+        --track-out: .13ch;
     }
 
     h1,
@@ -47,6 +47,7 @@
         border: var(--color-hotpink) dashed 1px !important;
         outline: var(--color-cornflowerblue) dashed 1px !important;
         padding: var(--s-3);
+        margin: var(--s-3);
     }
 
     h1 {
@@ -54,8 +55,9 @@
 
     }
 
-    h2 {
-        font-size: var(--s3);
+    h2,
+    h4 {
+        font-size: var(--s-1);
 
     }
 
@@ -63,12 +65,8 @@
         font-size: var(--s1);
     }
 
-    h4 {
-        font-size: var(--s0);
-    }
-
     h5 {
-        font-size: var(--s-1);
+        font-size: var(--s0);
     }
 
     .track-out {
@@ -84,7 +82,7 @@
     <h4>timpish<span class="inconspicuous">.</span>com</h4>
     <h1>Tim Martens</h1>
     <h3>Product Design <span class="inconspicuous">∴</span> Design Strategy <span class="inconspicuous">∴</span> Design Technology</h3>
-    <h5>Status<span class="inconspicuous">:</span> <span class="track-out">PLAY</span></h5>
+    <h5 class="track-out">STATUS<span class="inconspicuous">&#61;</span>PLAY</h5>
     <h2>ui<span class="inconspicuous">@</span>timpish<span class="inconspicuous">.</span>com</h2>
 </body>
 
