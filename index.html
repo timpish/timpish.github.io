@@ -12,7 +12,8 @@
             "Courier New", monospace;
         font-family: var(--font-base);
         font-size: calc(.27vw + 1em);
-        --measure: 57ch;
+        /* --measure: 57ch; */
+        --track-out: 0.127ch;
         --ratio: 1.27;
         --line-height: var(--ratio);
         line-height: var(--ratio);
@@ -25,17 +26,16 @@
         --s3: calc(var(--s2) * var(--ratio));
         --s4: calc(var(--s3) * var(--ratio));
         --s5: calc(var(--s4) * var(--ratio));
-        --border-thin: var(--s-3);
-        --border-thick: var(--s5);
-        --color-light: hsl(0, 0%, 97%);
-        --color-neutral: hsl(0, 0%, 60%);
-        --color-dark: hsl(0, 0%, 3%);
-        --color-cornflowerblue: hsl(219, 79%, 66%);
-        --color-hotpink: hsl(330, 100%, 71%);
-        background-color: var(--color-dark);
-        color: var(--color-light);
-        /* margin: var(--s5); */
-        --track-out: .13ch;
+        /* --border-thin: var(--s-3);
+        --border-thick: var(--s5); */
+        --_color-light: var(--color-light, hsl(0, 0%, 97%));
+        --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
+        --_color-dark: var(--color-dark, hsl(0, 0%, 3%));
+        --_color-light: var(--color-light, hsl(0, 0%, 97%));
+        --_color-cornflowerblue: var(--color-cornflowerblue, hsl(219, 79%, 66%));
+        --_color-hotpink: var(--color-hotpink, hsl(330, 100%, 71%));
+        background-color: var(--_color-dark);
+        color: var(--_color-light);
     }
 
     h1,
@@ -44,21 +44,19 @@
     h4,
     h5 {
         font-weight: normal;
-        border: var(--color-hotpink) dashed 1px !important;
-        outline: var(--color-cornflowerblue) dashed 1px !important;
+        border: var(--_color-hotpink) dashed 1px !important;
+        outline: var(--_color-cornflowerblue) dashed 1px !important;
         padding: var(--s-3);
         margin: var(--s-3);
     }
 
     h1 {
         font-size: var(--s5);
-
     }
 
     h2,
     h4 {
         font-size: var(--s-1);
-
     }
 
     h3 {
@@ -74,7 +72,7 @@
     }
 
     .inconspicuous {
-        color: var(--color-neutral);
+        color: var(--_color-neutral);
     }
 </style>
 
