@@ -13,10 +13,10 @@
         font-family: var(--font-base);
         font-size: calc(.27vw + 1em);
         /* --measure: 57ch; */
-        --track-out: 0.127ch;
+        --track-out: 0.064ch;
         --ratio: 1.27;
-        --line-height: var(--ratio);
-        --line-height-tight: calc(var(--ratio) * 0.79);
+        --lead: var(--ratio);
+        --lead-tight: calc(var(--ratio) * 0.79);
         line-height: var(--ratio);
         --s-3: calc(var(--s-2) / var(--ratio));
         --s-2: calc(var(--s-1) / var(--ratio));
@@ -31,7 +31,8 @@
         --border-thick: var(--s5); */
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
-        --_color-dark: var(--color-dark, hsl(0, 0%, 3%));
+        --_color-dark: var(--color-dark, hsl(223, 66%, 11%));
+        --_color-darkish: var(--color-darkish, hsl(220, 49%, 19%));
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-cornflowerblue: var(--color-cornflowerblue, hsl(219, 79%, 66%));
         --_color-hotpink: var(--color-hotpink, hsl(330, 100%, 71%));
@@ -44,16 +45,17 @@
     h3,
     h4,
     h5 {
+        background-color: var(--_color-darkish);
         font-weight: normal;
-        border: var(--_color-hotpink) dashed 1px !important;
-        outline: var(--_color-cornflowerblue) dashed 1px !important;
-        padding: var(--s-3);
+        border: var(--_color-cornflowerblue) dashed 1px !important;
+        border-radius: 8px;
+        padding: var(--s-1);
         margin: var(--s-3);
     }
 
     h1 {
         font-size: var(--s5);
-        line-height: var(--line-height-tight);
+        line-height: var(--lead-tight);
     }
 
     h2,
@@ -73,21 +75,21 @@
         letter-spacing: var(--track-out);
     }
 
-    .inconspicuous {
-        color: var(--_color-neutral);
+    .salient {
+        color: var(--_color-hotpink);
     }
 </style>
 
 <body>
-    <h4>timpish<span class="inconspicuous">.</span>com</h4>
+    <h4>timpish<span class="salient">.</span>com</h4>
     <h1>Timothy Martens</h1>
-    <h3><span class="track-out">HUMAN<span class="inconspicuous">&#8208;</span>CENTERE</span>D<span class="inconspicuous">:</span><br>
-        <span class="inconspicuous">&#8756; </span>Product Design<br>
-        <span class="inconspicuous">&#8756; </span>Design Strategy<br>
-        <span class="inconspicuous">&#8756; </span>Design Technology
+    <h3><span class="track-out">HUMAN<span class="salient">&#8208;</span>CENTERE</span>D<span class="salient">:</span><br>
+        <span class="salient">&#8756; </span>Product Design<br>
+        <span class="salient">&#8756; </span>Design Strategy<br>
+        <span class="salient">&#8756; </span>Design Technology
     </h3>
-    <h5>Status<span class="inconspicuous">&#61;</span>Play</h5>
-    <h2>ui<span class="inconspicuous">&#64;</span>timpish<span class="inconspicuous">.</span>com</h2>
+    <h5>Status<span class="salient">&#61;</span>Play</h5>
+    <h2>ui<span class="salient">&#64;</span>timpish<span class="salient">.</span>com</h2>
 </body>
 
 </html>
