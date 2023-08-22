@@ -16,6 +16,7 @@
         --track-out: 0.127ch;
         --ratio: 1.27;
         --line-height: var(--ratio);
+        --line-height-tight: calc(var(--ratio) * 0.79);
         line-height: var(--ratio);
         --s-3: calc(var(--s-2) / var(--ratio));
         --s-2: calc(var(--s-1) / var(--ratio));
@@ -52,6 +53,7 @@
 
     h1 {
         font-size: var(--s5);
+        line-height: var(--line-height-tight);
     }
 
     h2,
