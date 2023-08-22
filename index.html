@@ -12,14 +12,10 @@
             "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
             "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
             "Courier New", monospace;
-        font-family: var(--font-base);
-        font-size: calc(.27vw + 1em);
-        /* --measure: 57ch; */
-        --track-out: 0.064ch;
         --ratio: 1.27;
         --lead: var(--ratio);
-        --lead-tight: calc(var(--ratio) * 0.79);
-        line-height: var(--ratio);
+        --lead-tight: calc(var(--lead) * 0.79);
+        --track-out: 0.064ch;
         --s-3: calc(var(--s-2) / var(--ratio));
         --s-2: calc(var(--s-1) / var(--ratio));
         --s-1: calc(var(--s0) / var(--ratio));
@@ -29,8 +25,6 @@
         --s3: calc(var(--s2) * var(--ratio));
         --s4: calc(var(--s3) * var(--ratio));
         --s5: calc(var(--s4) * var(--ratio));
-        /* --border-thin: var(--s-3);
-        --border-thick: var(--s5); */
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
         --_color-dark: var(--color-dark, hsl(223, 66%, 11%));
@@ -40,6 +34,9 @@
         --_color-yellowgreen: var(--color-yellowgreen, hsl(84, 100%, 59%));
         background-color: var(--_color-dark);
         color: var(--_color-light);
+        font-family: var(--font-base);
+        font-size: calc(.27vw + 1em);
+        line-height: var(--ratio);
     }
 
     h1,
@@ -48,11 +45,11 @@
     h4,
     h5 {
         background-color: var(--_color-darkish);
-        font-weight: normal;
         border: var(--_color-cornflowerblue) dashed 1px;
         border-radius: 8px;
-        padding: var(--s-1);
+        font-weight: normal;
         margin: var(--s-3);
+        padding: var(--s-1);
     }
 
     h2 {
@@ -69,17 +66,6 @@
         font-size: var(--s1);
     }
 
-
-
-    .separated>* {
-        list-style: none;
-        display: inline;
-    }
-
-    .separated>*+*::before {
-        content: var(--symbol, '∴')'\0020';
-    }
-
     .track-out {
         letter-spacing: var(--track-out);
     }
@@ -89,9 +75,9 @@
     }
 
     .play span {
-        display: inline-block;
         animation: play 1s infinite;
         animation-delay: calc(.2s * var(--a));
+        display: inline-block;
 
     }
 
