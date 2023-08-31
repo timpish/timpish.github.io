@@ -27,11 +27,11 @@
         --s5: calc(var(--s4) * var(--ratio));
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
-        --_color-dark: var(--color-dark, hsl(223, 66%, 11%));
+        --_color-dark: var(--color-dark, hsl(224, 65%, 11%));
         --_color-darkish: var(--color-darkish, hsl(220, 49%, 19%));
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-cornflowerblue: var(--color-cornflowerblue, hsl(219, 79%, 66%));
-        --_color-yellowgreen: var(--color-yellowgreen, hsl(84, 100%, 59%));
+        --_color-yellowgreen: var(--color-yellowgreen, hsl(80, 61%, 50%));
         background-color: var(--_color-dark);
         color: var(--_color-light);
         font-family: var(--font-base);
@@ -48,7 +48,6 @@
         border: var(--_color-cornflowerblue) dashed 1px;
         border-radius: 8px;
         font-weight: normal;
-        margin: var(--s-3);
         padding: var(--s-1);
     }
 
@@ -64,14 +63,40 @@
 
     h3 {
         font-size: var(--s1);
+
     }
 
-    .track-out {
-        letter-spacing: var(--track-out);
+    .pad-s-2 {
+        padding: var(--s-2) !important;
+
     }
 
-    .salient {
-        color: var(--_color-yellowgreen);
+    .stretch {
+        height: 97vh;
+    }
+
+    .stack {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .stack>* {
+        margin-block: 0;
+
+    }
+
+    .stack>*+* {
+        margin-block-start: var(--s-2, .5rem);
+
+    }
+
+    .stack:only-child {
+        block-size: 100%;
+    }
+
+    .stack> :nth-child(4) {
+        margin-block-end: auto;
     }
 
     .play span {
@@ -93,19 +118,93 @@
             transform: translateY(-12px)
         }
     }
+
+    .track-out {
+        letter-spacing: var(--track-out);
+    }
+
+
+    .flourish {
+        color: var(--_color-yellowgreen);
+    }
+
+    .* {
+        outline: hotpink dashed 1px;
+    }
+
+    /* Wave physics inspired by https: //github.com/Goodkatz 🇫🇮 */
+    .waves {
+        margin-top: auto;
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        height: 25vh;
+        z-index: -1;
+    }
+
+    .layers>use {
+        animation: swell 30s cubic-bezier(.65, .60, .55, .60) infinite;
+    }
+
+    .layers>use:nth-child(1) {
+        animation-delay: -1s;
+        animation-duration: 8s;
+    }
+
+    .layers>use:nth-child(2) {
+        animation-delay: -2s;
+        animation-duration: 11s;
+    }
+
+    .layers>use:nth-child(3) {
+        animation-delay: -5s;
+        animation-duration: 16s;
+    }
+
+    .layers>use:nth-child(4) {
+        animation-delay: -6s;
+        animation-duration: 19s;
+    }
+
+    @keyframes swell {
+        0% {
+            transform: translateX(90px);
+        }
+
+        100% {
+            transform: translateX(-86px);
+        }
+    }
 </style>
 
 <body>
-    <h1>timpish<span class="salient">.</span>com</h1>
-    <h2>Timothy Martens</h2>
-    <h3><span class="track-out">HUMAN<span class="salient">&#8208;</span>CENTERE</span>D<span class="salient">:</span><br>
-        <span class="salient">&#8756; </span>Product Design<br>
-        <span class="salient">&#8756; </span>Design Strategy<br>
-        <span class="salient">&#8756; </span>Design Technology
-    </h3>
-    <h4>Status<span class="salient">&#61;</span><span class="play track-out"><span style="--a:1">P</span><span style="--a:2">L</span><span style="--a:3">A</span><span style="--a:4">Y</span><span style="--a:5">!</span><span style="--a:6">🏄🏻‍♂️</span></span>
-    </h4>
-    <h5>ui<span class="salient">&#64;</span>timpish<span class="salient">.</span>com</h5>
+    <div class="pad-s-2">
+        <div class="stretch">
+            <div class="stack">
+                <h1>timpish<span class="flourish">.</span>com</h1>
+                <h2>Timothy Martens</h2>
+                <h3><span class="track-out">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish">:</span><br>
+                    <span class="flourish">&#8756; </span>Product Design<br>
+                    <span class="flourish">&#8756; </span>Design Strategy<br>
+                    <span class="flourish">&#8756; </span>Design Technology
+                </h3>
+                <h5>ui<span class="flourish">&#64;</span>timpish<span class="flourish">.</span>com</h5>
+                <h4>Status<span class="flourish">&#61;</span><span class="play track-out"><span style="--a:1">P</span><span style="--a:2">L</span><span style="--a:3">A</span><span style="--a:4">Y</span><span style="--a:5">!</span><span style="--a:6">🏄🏻‍♂️</span></span>
+                </h4>
+            </div>
+        </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="waves" preserveAspectRatio="none" shape-rendering="auto" viewBox="0 24 150 28">
+        <defs>
+            <path id="wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+        </defs>
+        <g class="layers">
+            <use xlink:href="#wave" x="48" y="1" fill="hsla(219, 79%, 66%,.2)" />
+            <use xlink:href="#wave" x="48" y="4" fill="hsla(219, 79%, 66%, .2)" />
+            <use xlink:href="#wave" x="48" y="6" fill="hsla(219, 79%, 66%, .1)" />
+            <use xlink:href="#wave" x="48" y="8" fill="hsla(219, 79%, 66%, .1)" />
+        </g>
+    </svg>
 </body>
 
 </html>
