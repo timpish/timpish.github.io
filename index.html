@@ -3,7 +3,8 @@
 <meta charset=UTF-8>
 <meta content="width=device-width,initial-scale=1" name=viewport>
 <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
-<link href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>" rel=icon>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>">
+
 <title>Timothy Martens | HUMAN-CENTERED Product Design &#8756; Design Strategy &#8756; Design Technology</title>
 <meta name="description" content="State of Play" />
 <style>
@@ -13,9 +14,10 @@
             "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
             "Courier New", monospace;
         --ratio: 1.27;
+        --measure: 20rem;
         --lead: var(--ratio);
         --lead-tight: calc(var(--lead) * 0.79);
-        --track-out: 0.064ch;
+        --track-out: 0.128ch;
         --s-3: calc(var(--s-2) / var(--ratio));
         --s-2: calc(var(--s-1) / var(--ratio));
         --s-1: calc(var(--s0) / var(--ratio));
@@ -27,11 +29,11 @@
         --s5: calc(var(--s4) * var(--ratio));
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
-        --_color-dark: var(--color-dark, hsl(224, 65%, 11%));
-        --_color-darkish: var(--color-darkish, hsl(220, 49%, 19%));
+        --_color-dark: var(--color-dark, hsl(223, 64%, 11%));
+        --_color-darkish: var(--color-darkish, hsl(220, 48%, 19%));
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-cornflowerblue: var(--color-cornflowerblue, hsl(219, 79%, 66%));
-        --_color-yellowgreen: var(--color-yellowgreen, hsl(80, 61%, 50%));
+        --_color-yellowgreen: var(--color-yellowgreen, #99cd32);
         background-color: var(--_color-dark);
         color: var(--_color-light);
         font-family: var(--font-base);
@@ -42,38 +44,32 @@
     h1,
     h2,
     h3,
-    h4,
-    h5 {
-        background-color: var(--_color-darkish);
-        border: var(--_color-cornflowerblue) dashed 1px;
-        border-radius: 8px;
+    h4 {
         font-weight: normal;
-        padding: var(--s-1);
     }
 
-    h2 {
+    h1 {
         font-size: var(--s5);
         line-height: var(--lead-tight);
     }
 
-    h1,
-    h5 {
-        font-size: var(--s-1);
+    h2 {
+        font-size: var(--s1);
     }
 
     h3 {
-        font-size: var(--s1);
-
+        font-size: var(--s0);
     }
 
-    .pad-s-2 {
-        padding: var(--s-2) !important;
-
+    h4 {
+        font-size: var(--s-1);
     }
 
     .stretch {
         height: 97vh;
     }
+
+
 
     .stack {
         display: flex;
@@ -99,6 +95,62 @@
         margin-block-end: auto;
     }
 
+    .box {
+        padding: var(--s-1);
+        background-color: var(--_color-darkish);
+        border: var(--_color-cornflowerblue) dashed 1px;
+        border-radius: 8px;
+    }
+
+    .box * {
+        color: inherit;
+    }
+
+    .box .with-icon {
+        background-color: var(--_color-dark);
+
+    }
+
+    .switcher {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--s-3);
+    }
+
+    .switcher>* {
+        flex-grow: 1;
+        flex-basis: calc(var(--measure) - 100%) * 999);
+    }
+
+    .switcher> :nth-last-child(n+ 4),
+    .switcher> :nth-last-child(n+ 4)~* {
+        flex-basis: 100%;
+    }
+
+    .icon {
+        width: 0.75em;
+        width: 1cap;
+        height: 0.75em;
+        height: 1cap;
+    }
+
+    .with-icon {
+        display: inline-flex;
+        align-items: baseline;
+    }
+
+    .with-icon .icon {
+        margin-inline-end: var(--s-2);
+    }
+
+    .center {
+        box-sizing: content-box;
+        margin-inline: auto;
+        text-align: center;
+        max-inline-size: var(--measure);
+    }
+
+
     .play span {
         animation: play 1s infinite;
         animation-delay: calc(.2s * var(--a));
@@ -108,31 +160,12 @@
 
     @keyframes play {
 
-        0%,
-        40%,
-        100% {
-            transform: translateY(0)
-        }
-
         40% {
             transform: translateY(-12px)
         }
     }
 
-    .track-out {
-        letter-spacing: var(--track-out);
-    }
-
-
-    .flourish {
-        color: var(--_color-yellowgreen);
-    }
-
-    .* {
-        outline: hotpink dashed 1px;
-    }
-
-    /* Wave physics inspired by https: //github.com/Goodkatz 🇫🇮 */
+    /* Inspired by https://github.com/Goodkatz 🇫🇮 👏 */
     .waves {
         margin-top: auto;
         position: fixed;
@@ -175,22 +208,65 @@
             transform: translateX(-86px);
         }
     }
+
+    .track-out {
+        letter-spacing: var(--track-out);
+    }
+
+    .flourish {
+        color: var(--_color-yellowgreen);
+    }
+
+    .pad-s-2 {
+        padding: var(--s-2)
+    }
+
+    .mb-3 {
+        margin-bottom: var(--s-3);
+    }
+
+    .font-weight\:bold {
+        font-weight: bold;
+        font-size: var(--s2);
+    }
+
+    .* {
+        outline: hotpink dashed 1px;
+    }
 </style>
 
 <body>
     <div class="pad-s-2">
         <div class="stretch">
             <div class="stack">
-                <h1>timpish<span class="flourish">.</span>com</h1>
-                <h2>Timothy Martens</h2>
-                <h3><span class="track-out">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish">:</span><br>
-                    <span class="flourish">&#8756; </span>Product Design<br>
-                    <span class="flourish">&#8756; </span>Design Strategy<br>
-                    <span class="flourish">&#8756; </span>Design Technology
+                <h4 class="box">timpish<span class="flourish">.</span>com</h4>
+                <h1 class="box">Timothy Martens</h1>
+                <div class="box">
+                    <h2 class="center font-weight:bold track-out mb-3"><span class="">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish"></span></h2>
+                    <div class="switcher">
+                        <h2 class=" box with-icon">
+                            <svg class="icon">
+                                <use href="#therefore"></use>
+                            </svg>
+                            Product&nbsp;Design
+                        </h2>
+                        <h2 class="box with-icon">
+                            <svg class="icon">
+                                <use href="#therefore"></use>
+                            </svg>
+                            Design&nbsp;Strategy
+                        </h2>
+                        <h2 class="box with-icon">
+                            <svg class="icon">
+                                <use href="#therefore"></use>
+                            </svg>
+                            Design&nbsp;Technology
+                        </h2>
+                    </div>
+                </div>
+                <h4 class="box">ui<span class="flourish">&#64;</span>timpish<span class="flourish">.</span>com</h4>
+                <h3 class="box">Status<span class="flourish">&#61;</span><span class="play track-out"><span style="--a:1">P</span><span style="--a:2">L</span><span style="--a:3">A</span><span style="--a:4">Y</span><span style="--a:5">!</span><span style="--a:6">🏄🏻‍♂️</span></span>
                 </h3>
-                <h5>ui<span class="flourish">&#64;</span>timpish<span class="flourish">.</span>com</h5>
-                <h4>Status<span class="flourish">&#61;</span><span class="play track-out"><span style="--a:1">P</span><span style="--a:2">L</span><span style="--a:3">A</span><span style="--a:4">Y</span><span style="--a:5">!</span><span style="--a:6">🏄🏻‍♂️</span></span>
-                </h4>
             </div>
         </div>
     </div>
@@ -204,6 +280,13 @@
             <use xlink:href="#wave" x="48" y="6" fill="hsla(219, 79%, 66%, .1)" />
             <use xlink:href="#wave" x="48" y="8" fill="hsla(219, 79%, 66%, .1)" />
         </g>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <symbol id="therefore" viewBox="0 0 10 10" fill="var(--_color-yellowgreen)">
+            <circle cx="5" cy="3" r="2" />
+            <circle cx="2" cy="8" r="2" />
+            <circle cx="8" cy="8" r="2" />
+        </symbol>
     </svg>
 </body>
 
