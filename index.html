@@ -4,10 +4,11 @@
 <meta content="width=device-width,initial-scale=1" name=viewport>
 <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>">
-
 <title>Timothy Martens &#8211; Product Designer &amp; Design Technologist</title>
 <meta name="description" content="State of Play" />
 <style>
+    /* globals */
+
     :root {
         --font-base: "Operator Mono", ui-monospace, Menlo, Monaco,
             "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
@@ -17,7 +18,9 @@
         --measure: 30rem;
         --lead: var(--ratio);
         --lead-tight: calc(var(--lead) * 0.79);
-        --track-out: 0.128ch;
+        --lead-loose: calc(var(--lead) * var(--lead));
+        --track-out: 0.096ch;
+        --track-in: -0.032ch;
         --s-3: calc(var(--s-2) / var(--ratio));
         --s-2: calc(var(--s-1) / var(--ratio));
         --s-1: calc(var(--s0) / var(--ratio));
@@ -30,7 +33,7 @@
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
         --_color-dark: var(--color-dark, hsl(223, 64%, 11%));
-        --_color-darkish: var(--color-darkish, hsl(220, 48%, 19%));
+        --_color-darkish: var(--color-darkish, hsla(220, 48%, 19%, .81));
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-cornflowerblue: var(--color-cornflowerblue, hsl(219, 79%, 66%));
         --_color-yellowgreen: var(--color-yellowgreen, #99cd32);
@@ -49,7 +52,9 @@
     }
 
     h1 {
+        font-style: italic;
         font-size: var(--s5);
+        letter-spacing: var(--track-in);
         line-height: var(--lead-tight);
     }
 
@@ -65,11 +70,39 @@
         font-size: var(--s-1);
     }
 
-    .stretch {
-        height: 97vh;
+    /* primitives */
+
+    .box {
+        padding: var(--s-1);
+        background-color: var(--_color-darkish);
+        border: var(--_color-cornflowerblue) dashed 1px;
+        border-radius: var(--s-2);
     }
 
+    .box * {
+        color: inherit;
+    }
 
+    .box .with-icon {
+        background-color: var(--_color-dark);
+
+    }
+
+    .icon {
+        width: 0.75em;
+        width: 1cap;
+        height: 0.75em;
+        height: 1cap;
+    }
+
+    .with-icon {
+        display: inline-flex;
+        align-items: baseline;
+    }
+
+    .with-icon .icon {
+        margin-inline-end: var(--s-2);
+    }
 
     .stack {
         display: flex;
@@ -95,22 +128,6 @@
         margin-block-end: auto;
     }
 
-    .box {
-        padding: var(--s-1);
-        background-color: var(--_color-darkish);
-        border: var(--_color-cornflowerblue) dashed 1px;
-        border-radius: 8px;
-    }
-
-    .box * {
-        color: inherit;
-    }
-
-    .box .with-icon {
-        background-color: var(--_color-dark);
-
-    }
-
     .switcher {
         display: flex;
         flex-wrap: wrap;
@@ -127,20 +144,10 @@
         flex-basis: 100%;
     }
 
-    .icon {
-        width: 0.75em;
-        width: 1cap;
-        height: 0.75em;
-        height: 1cap;
-    }
+    /* utils */
 
-    .with-icon {
-        display: inline-flex;
-        align-items: baseline;
-    }
-
-    .with-icon .icon {
-        margin-inline-end: var(--s-2);
+    .stretch {
+        height: 97vh;
     }
 
     .center {
@@ -150,6 +157,41 @@
         max-inline-size: var(--measure);
     }
 
+    .text-align\:center {
+        text-align: center;
+    }
+
+    .track-out {
+        letter-spacing: var(--track-out);
+    }
+
+    .flourish {
+        color: var(--_color-yellowgreen);
+    }
+
+    .font-weight\:bold {
+        font-weight: bold;
+    }
+
+    .font-size\:2 {
+        font-size: var(--s2);
+    }
+
+    .padding\:-1 {
+        padding: var(--s-1);
+    }
+
+    .margin-bottom\:-3 {
+        margin-bottom: var(--s-3);
+    }
+
+
+    .* {
+        /* debugger */
+        outline: hsla(330, 100%, 71%, .5) dashed 1px;
+    }
+
+    /* motion */
 
     .play span {
         animation: play 1.3s ease-in-out infinite;
@@ -208,43 +250,18 @@
             transform: translateX(-86px);
         }
     }
-
-    .track-out {
-        letter-spacing: var(--track-out);
-    }
-
-    .flourish {
-        color: var(--_color-yellowgreen);
-    }
-
-    .pad {
-        padding: var(--s-1)
-    }
-
-    .mb-3 {
-        margin-bottom: var(--s-3);
-    }
-
-    .font-weight\:bold {
-        font-weight: bold;
-        font-size: var(--s2);
-    }
-
-    .* {
-        outline: hotpink dashed 1px;
-    }
 </style>
 
 <body>
-    <div class="pad">
+    <div class="padding:-1">
         <div class="stretch">
             <div class="stack">
                 <h4 class="box">timpish<span class="flourish">.</span>com</h4>
                 <h1 class="box">Timothy Martens</h1>
                 <div class="box">
-                    <h2 class="center font-weight:bold track-out mb-3"><span class="">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish"></span></h2>
+                    <h2 class="center font-weight:bold font-size:2 track-out margin-bottom:-3">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish"></span></h2>
                     <div class="switcher">
-                        <h2 class=" box with-icon">
+                        <h2 class="box with-icon">
                             <svg class="icon">
                                 <use href="#therefore"></use>
                             </svg>
