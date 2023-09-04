@@ -7,41 +7,52 @@
 <title>Timothy Martens &#8211; Product Designer &amp; Design Technologist</title>
 <meta name="description" content="State of Play" />
 <style>
-    /* globals */
-
     :root {
-        --font-base: "Operator Mono", ui-monospace, Menlo, Monaco,
-            "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
-            "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
-            "Courier New", monospace;
-        --ratio: 1.27;
-        --measure: 30rem;
+        /* globals */
+        --font-base: Dank Mono, Operator Mono, Inconsolata, Fira Mono, Monaco, ui-monospace, SF Mono, Droid Sans Mono, Source Code Pro, monospace;
+        font-family: var(--font-base);
+        font-size: calc(.25vw + 1em);
+        --ratio: 1.25;
+        line-height: var(--ratio);
         --lead: var(--ratio);
+        --measure: 30rem;
         --lead-tight: calc(var(--lead) * 0.79);
         --lead-loose: calc(var(--lead) * var(--lead));
-        --track-out: 0.096ch;
-        --track-in: -0.032ch;
-        --s-3: calc(var(--s-2) / var(--ratio));
-        --s-2: calc(var(--s-1) / var(--ratio));
-        --s-1: calc(var(--s0) / var(--ratio));
-        --s0: 1rem;
-        --s1: calc(var(--s0) * var(--ratio));
-        --s2: calc(var(--s1) * var(--ratio));
-        --s3: calc(var(--s2) * var(--ratio));
-        --s4: calc(var(--s3) * var(--ratio));
-        --s5: calc(var(--s4) * var(--ratio));
+        --track-out: 0.095ch;
+        --track-in: -0.030ch;
+        --type-3xl: clamp(3.34rem, calc(2.84rem + 2.49vw), 4.77rem);
+        --type-2xl: clamp(2.67rem, calc(2.27rem + 1.99vw), 3.82rem);
+        --type-xl: clamp(2.14rem, calc(1.82rem + 1.59vw), 3.05rem);
+        --type-l: clamp(1.71rem, calc(1.45rem + 1.27vw), 2.44rem);
+        --type-m: clamp(1.37rem, calc(1.16rem + 1.02vw), 1.95rem);
+        --type-s: clamp(1.09rem, calc(0.93rem + 0.82vw), 1.56rem);
+        --type-xs: clamp(0.88rem, calc(0.74rem + 0.65vw), 1.25rem);
+        --type-2xs: clamp(0.70rem, calc(0.60rem + 0.52vw), 1.00rem);
+        --type-3xs: clamp(0.56rem, calc(0.48rem + 0.42vw), 0.80rem);
+        --space-2xl: clamp(2.63rem, calc(2.23rem + 1.96vw), 3.75rem);
+        --space-xl: clamp(1.75rem, calc(1.49rem + 1.30vw), 2.50rem);
+        --space-l: clamp(1.31rem, calc(1.12rem + 0.98vw), 1.88rem);
+        --space-m: clamp(0.88rem, calc(0.74rem + 0.65vw), 1.25rem);
+        --space-s: clamp(0.69rem, calc(0.60rem + 0.43vw), 0.94rem);
+        --space-xs: clamp(0.44rem, calc(0.37rem + 0.33vw), 0.63rem);
+        --space-2xs: clamp(0.25rem, calc(0.23rem + 0.11vw), 0.31rem);
+        --space-xl-2xl: clamp(1.75rem, calc(1.05rem + 3.48vw), 3.75rem);
+        --space-l-xl: clamp(1.31rem, calc(0.90rem + 2.07vw), 2.50rem);
+        --space-m-l: clamp(0.88rem, calc(0.53rem + 1.74vw), 1.88rem);
+        --space-s-xl: clamp(0.69rem, calc(0.06rem + 3.15vw), 2.50rem);
+        --space-s-l: clamp(0.69rem, calc(0.27rem + 2.07vw), 1.88rem);
+        --space-s-m: clamp(0.69rem, calc(0.49rem + 0.98vw), 1.25rem);
+        --space-xs-s: clamp(0.44rem, calc(0.26rem + 0.87vw), 0.94rem);
+        --space-2xs-xs: clamp(0.25rem, calc(0.12rem + 0.65vw), 0.63rem);
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
         --_color-dark: var(--color-dark, hsl(223, 64%, 11%));
         --_color-darkish: var(--color-darkish, hsla(220, 48%, 19%, .81));
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-cornflowerblue: var(--color-cornflowerblue, hsl(219, 79%, 66%));
-        --_color-yellowgreen: var(--color-yellowgreen, #99cd32);
+        --_color-yellowgreen: var(--color-yellowgreen, hsl(80, 61%, 50%));
         background-color: var(--_color-dark);
         color: var(--_color-light);
-        font-family: var(--font-base);
-        font-size: calc(.27vw + 1em);
-        line-height: var(--ratio);
     }
 
     h1,
@@ -52,30 +63,30 @@
     }
 
     h1 {
-        font-size: var(--s5);
+        font-size: var(--type-2xl);
         letter-spacing: var(--track-in);
         line-height: var(--lead-tight);
     }
 
     h2 {
-        font-size: var(--s1);
+        font-size: var(--type-s);
     }
 
     h3 {
-        font-size: var(--s0);
+        font-size: var(--type-xs);
     }
 
     h4 {
-        font-size: var(--s-1);
+        font-size: var(--type-2xs);
     }
 
-    /* primitives */
+    /* layout primitives */
 
     .box {
-        padding: var(--s-1);
+        padding: var(--space-s-m);
         background-color: var(--_color-darkish);
         border: var(--_color-cornflowerblue) dashed 1px;
-        border-radius: var(--s-2);
+        border-radius: var(--space-s);
     }
 
     .box * {
@@ -100,7 +111,7 @@
     }
 
     .with-icon .icon {
-        margin-inline-end: var(--s-2);
+        margin-inline-end: var(--space-s-m);
     }
 
     .stack {
@@ -115,7 +126,7 @@
     }
 
     .stack>*+* {
-        margin-block-start: var(--s-2, .5rem);
+        margin-block-start: var(--space-xs-s, .5rem);
 
     }
 
@@ -130,7 +141,7 @@
     .switcher {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--s-3);
+        gap: var(--space-xs-s);
     }
 
     .switcher>* {
@@ -168,22 +179,21 @@
         color: var(--_color-yellowgreen);
     }
 
-    .font-weight\:bold {
+    /* .font-weight\:bold {
         font-weight: bold;
-    }
+    } */
 
     .font-size\:2 {
-        font-size: var(--s2);
+        font-size: var(--type-m);
     }
 
     .padding\:-1 {
-        padding: var(--s-1);
+        padding: var(--space-s-m);
     }
 
     .margin-bottom\:-3 {
-        margin-bottom: var(--s-3);
+        margin-bottom: var(--space-xs);
     }
-
 
     .* {
         /* debugger */
@@ -196,13 +206,11 @@
         animation: play 1.3s ease-in-out infinite;
         animation-delay: calc(.2s * var(--a));
         display: inline-block;
-
     }
 
     @keyframes play {
-
         40% {
-            transform: translateY(-12px)
+            transform: translateY(-10px)
         }
     }
 
@@ -258,7 +266,7 @@
                 <h4 class="box">timpish<span class="flourish">.</span>com</h4>
                 <h1 class="box">Timothy Martens</h1>
                 <div class="box">
-                    <h2 class="center font-weight:bold font-size:2 track-out margin-bottom:-3">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish"></span></h2>
+                    <h2 class="center font-size:2 track-out margin-bottom:-3">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish"></span></h2>
                     <div class="switcher">
                         <h2 class="box with-icon">
                             <svg class="icon">
@@ -280,7 +288,7 @@
                         </h2>
                     </div>
                 </div>
-                <h4 class="box">ui<span class="flourish">&#64;</span>timpish<span class="flourish">.</span>com</h4>
+                <h4 class="box"><a href="mailto:ui@timpish.com?subject=Hello from timpish.com">ui<span class="flourish">&#64;</span>timpish<span class="flourish">.</span>com</a></h4>
                 <h3 class="box">Status<span class="flourish">&#61;</span><span class="play track-out"><span style="--a:1">P</span><span style="--a:2">L</span><span style="--a:3">A</span><span style="--a:4">Y</span><span style="--a:5">!</span><span style="--a:6">🏄🏻‍♂️</span></span>
                 </h3>
             </div>
