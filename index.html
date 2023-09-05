@@ -2,6 +2,9 @@
 <html lang=en>
 <meta charset=UTF-8>
 <meta content="width=device-width,initial-scale=1" name=viewport>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>">
 <title>Timothy Martens &#8211; Product Designer &amp; Design Technologist</title>
@@ -9,7 +12,7 @@
 <style>
     :root {
         /* globals */
-        --font-base: Dank Mono, Operator Mono, Inconsolata, Fira Mono, Monaco, ui-monospace, SF Mono, Droid Sans Mono, Source Code Pro, monospace;
+        --font-base: Atkinson Hyperlegible, Dank Mono, Operator Mono, Inconsolata, Fira Mono, Monaco, ui-monospace, SF Mono, Droid Sans Mono, Source Code Pro, monospace;
         font-family: var(--font-base);
         font-size: calc(.25vw + 1em);
         --ratio: 1.25;
@@ -78,6 +81,29 @@
 
     h4 {
         font-size: var(--type-2xs);
+    }
+
+
+    /* a {
+        text-decoration-style: wavy;
+        text-decoration-color: var(--_color-cornflowerblue);
+        text-decoration-thickness: .05em;
+        text-underline-offset: .25em;
+    } */
+
+    a {
+        /*text-decoration syntax: line, color, style, thickness */
+        text-decoration: overline underline var(--_color-darkish) wavy 0.15em;
+        text-underline-offset: 0.7em;
+        /* transition syntax: transition-property, transition-duration, transition-timing-function, and transition-delay. */
+        transition: text-decoration-color 900ms, text-underline-offset 900ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+
+    a:hover {
+        text-decoration: overline underline var(--_color-cornflowerblue) wavy 0.15em;
+        /* text-decoration-color: var(--_color-cornflowerblue); */
+        text-underline-offset: 0.4em;
+
     }
 
     /* layout primitives */
@@ -202,7 +228,7 @@
 
     /* motion */
 
-    play span {
+    .play span {
         animation: play 1.3s ease-in-out infinite;
         animation-delay: calc(.2s * var(--a));
         display: inline-block;
@@ -215,7 +241,7 @@
     }
 
     /* Inspired by https://github.com/Goodkatz 🇫🇮 👏 */
-    waves {
+    .waves {
         margin-top: auto;
         position: fixed;
         bottom: 0;
