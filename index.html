@@ -21,7 +21,7 @@
         --measure: 30rem;
         --lead-tight: calc(var(--lead) * 0.79);
         --lead-loose: calc(var(--lead) * var(--lead));
-        --track-out: 0.095ch;
+        --track-out: 0.125ch;
         --track-in: -0.030ch;
         --type-3xl: clamp(3.34rem, calc(2.84rem + 2.49vw), 4.77rem);
         --type-2xl: clamp(2.67rem, calc(2.27rem + 1.99vw), 3.82rem);
@@ -67,7 +67,6 @@
 
     h1 {
         font-size: var(--type-2xl);
-        letter-spacing: var(--track-in);
         line-height: var(--lead-tight);
     }
 
@@ -108,11 +107,13 @@
 
     /* layout primitives */
 
+
     .box {
         padding: var(--space-s-m);
         background-color: var(--_color-darkish);
         border: var(--_color-cornflowerblue) dashed 1px;
         border-radius: var(--space-s);
+        /*gradient*/
     }
 
     .box * {
