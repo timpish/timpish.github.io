@@ -12,7 +12,8 @@
 <style>
     :root {
         /* globals */
-        --font-base: Atkinson Hyperlegible, Dank Mono, Operator Mono, Inconsolata, Fira Mono, Monaco, ui-monospace, SF Mono, Droid Sans Mono, Source Code Pro, monospace;
+        --font-base: Atkinson Hyperlegible, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+        --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, Monaco, ui-monospace, SF Mono, Droid Sans Mono, Source Code Pro, monospace;
         font-family: var(--font-base);
         font-size: calc(.25vw + 1em);
         --ratio: 1.25;
@@ -22,7 +23,8 @@
         --lead-tight: calc(var(--lead) * 0.79);
         --lead-loose: calc(var(--lead) * var(--lead));
         --track-out: 0.125ch;
-        --track-in: -0.030ch;
+        --track-in: -0.025ch;
+
         --type-3xl: clamp(3.34rem, calc(2.84rem + 2.49vw), 4.77rem);
         --type-2xl: clamp(2.67rem, calc(2.27rem + 1.99vw), 3.82rem);
         --type-xl: clamp(2.14rem, calc(1.82rem + 1.59vw), 3.05rem);
@@ -39,18 +41,20 @@
         --space-s: clamp(0.69rem, calc(0.60rem + 0.43vw), 0.94rem);
         --space-xs: clamp(0.44rem, calc(0.37rem + 0.33vw), 0.63rem);
         --space-2xs: clamp(0.25rem, calc(0.23rem + 0.11vw), 0.31rem);
+
         --space-xl-2xl: clamp(1.75rem, calc(1.05rem + 3.48vw), 3.75rem);
         --space-l-xl: clamp(1.31rem, calc(0.90rem + 2.07vw), 2.50rem);
-        --space-m-l: clamp(0.88rem, calc(0.53rem + 1.74vw), 1.88rem);
         --space-s-xl: clamp(0.69rem, calc(0.06rem + 3.15vw), 2.50rem);
+        --space-m-l: clamp(0.88rem, calc(0.53rem + 1.74vw), 1.88rem);
         --space-s-l: clamp(0.69rem, calc(0.27rem + 2.07vw), 1.88rem);
         --space-s-m: clamp(0.69rem, calc(0.49rem + 0.98vw), 1.25rem);
         --space-xs-s: clamp(0.44rem, calc(0.26rem + 0.87vw), 0.94rem);
         --space-2xs-xs: clamp(0.25rem, calc(0.12rem + 0.65vw), 0.63rem);
+
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
         --_color-dark: var(--color-dark, hsl(223, 64%, 11%));
-        --_color-darkish: var(--color-darkish, hsla(220, 48%, 19%, .81));
+        --_color-darkish: var(--color-darkish, hsla(220, 48%, 19%, .91));
         --_color-light: var(--color-light, hsl(0, 0%, 97%));
         --_color-cornflowerblue: var(--color-cornflowerblue, hsl(219, 79%, 66%));
         --_color-yellowgreen: var(--color-yellowgreen, hsl(80, 61%, 50%));
@@ -71,7 +75,7 @@
     }
 
     h2 {
-        font-size: var(--type-s);
+        font-size: var(--type-m);
     }
 
     h3 {
@@ -82,27 +86,18 @@
         font-size: var(--type-2xs);
     }
 
-
-    /* a {
-        text-decoration-style: wavy;
-        text-decoration-color: var(--_color-cornflowerblue);
-        text-decoration-thickness: .05em;
-        text-underline-offset: .25em;
-    } */
-
     a {
-        /*text-decoration syntax: line, color, style, thickness */
-        text-decoration: overline underline var(--_color-darkish) wavy 0.15em;
-        text-underline-offset: 0.7em;
-        /* transition syntax: transition-property, transition-duration, transition-timing-function, and transition-delay. */
-        transition: text-decoration-color 900ms, text-underline-offset 900ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        text-decoration-line: underline;
+        text-decoration-color: hsla(80, 61%, 50%, 0);
+        text-decoration-style: wavy;
+        text-decoration-thickness: 0.14em;
+        text-underline-offset: .9ex;
+        transition: text-decoration-color 1200ms, text-underline-offset 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     a:hover {
-        text-decoration: overline underline var(--_color-cornflowerblue) wavy 0.15em;
-        /* text-decoration-color: var(--_color-cornflowerblue); */
-        text-underline-offset: 0.4em;
-
+        text-decoration-color: hsla(219, 79%, 66%, .91);
+        text-underline-offset: 0.2ex;
     }
 
     /* layout primitives */
@@ -206,19 +201,11 @@
         color: var(--_color-yellowgreen);
     }
 
-    /* .font-weight\:bold {
-        font-weight: bold;
-    } */
-
-    .font-size\:2 {
-        font-size: var(--type-m);
-    }
-
-    .padding\:-1 {
+    .padding\:s-m {
         padding: var(--space-s-m);
     }
 
-    .margin-bottom\:-3 {
+    .margin-bottom\:xs {
         margin-bottom: var(--space-xs);
     }
 
@@ -241,7 +228,7 @@
         }
     }
 
-    /* Inspired by https://github.com/Goodkatz 🇫🇮 👏 */
+    /* Inspired by https://github.com/Goodkatz 🇫🇮 🤜🤛 🇺🇸 */
     .waves {
         margin-top: auto;
         position: fixed;
@@ -287,13 +274,13 @@
 </style>
 
 <body>
-    <div class="padding:-1">
+    <div class="padding:s-m">
         <div class="stretch">
             <div class="stack">
                 <h4 class="box">timpish<span class="flourish">.</span>com</h4>
                 <h1 class="box">Timothy Martens</h1>
                 <div class="box">
-                    <h2 class="center font-size:2 track-out margin-bottom:-3">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish"></span></h2>
+                    <h2 class="center track-out margin-bottom:xs">HUMAN<span class="flourish">&#8208;</span>CENTERE</span>D<span class="flourish"></span></h2>
                     <div class="switcher">
                         <h2 class="box with-icon">
                             <svg class="icon">
