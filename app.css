@@ -36,6 +36,7 @@
         min-height: 100vh;
         text-rendering: optimizeSpeed;
         line-height: 1.5;
+
     }
 
     /* A elements that don't have a class get default styles */
@@ -74,6 +75,13 @@
         }
     }
 
+    body {
+        background: linear-gradient(20deg, hsl(223, 64%, 1%), hsl(223, 74%, 6%), hsl(223, 84%, 11%), hsl(223, 64%, 1%), hsl(220, 48%, 9%), hsl(220, 48%, 2%), hsl(220, 48%, 19%), hsl(200, 68%, 19%));
+        /* background: linear-gradient(45deg, turquoise, darkorchid, deeppink, orange); */
+        /* background-image: linear-gradient(to bottom left in oklab, oklch(100% .5 109) 0%, oklch(72% .5 100) 100%);
+        background-image: linear-gradient(to bottom left, #ff0 0%, #f48b00 100%); */
+    }
+
     /* fonts */
     @font-face {
         font-family: Atkinson Hyperlegible;
@@ -85,9 +93,9 @@
 
     :root {
         /* globals */
-        --font-base: Atkinson Hyperlegible, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+        --font-body: Atkinson Hyperlegible, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
         --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, Monaco, ui-monospace, SF Mono, Droid Sans Mono, Source Code Pro, monospace;
-        font-family: var(--font-base);
+        font-family: var(--font-body);
         font-size: calc(.25vw + 1em);
         --ratio: 1.25;
         line-height: var(--ratio);
@@ -156,7 +164,8 @@
         font-size: var(--type-xs);
     }
 
-    h4 {
+    h4,
+    p {
         font-size: var(--type-2xs);
     }
 
