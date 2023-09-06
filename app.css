@@ -126,15 +126,20 @@
         --space-xs-s: clamp(0.44rem, calc(0.26rem + 0.87vw), 0.94rem);
         --space-2xs-xs: clamp(0.25rem, calc(0.12rem + 0.65vw), 0.63rem);
 
-        --_color-light: var(--color-light, hsl(0, 0%, 97%));
-        --_color-neutral: var(--color-neutral, hsl(0, 0%, 60%));
+        --_color-light: var(--color-light, #f7f7f7);
+        --_color-neutral: var(--color-neutral, #999999);
         --_color-dark: var(--color-dark, hsl(223, 64%, 11%));
-        --_color-darkish: var(--color-darkish, hsla(220, 48%, 19%, .91));
-        --_color-light: var(--color-light, hsl(0, 0%, 97%));
-        --_color-cornflowerblue: var(--color-cornflowerblue, hsl(219, 79%, 66%));
+        --_color-darkish: var(--color-darkish, hsla(220, 48%, 19%, 0.91));
+        /* --_color-darkish: var(--color-darkish, hsl(220, 48%, 19%)); */
+        --_color-light: var(--color-light, #f7f7f7);
+        --_color-cornflowerblue: var(--color-cornflowerblue, #6494ed);
         --_color-yellowgreen: var(--color-yellowgreen, hsl(80, 61%, 50%));
         background-color: var(--_color-dark);
         color: var(--_color-light);
+    }
+
+    body {
+        background: linear-gradient(14deg, hsl(223, 64%, 9%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(220, 48%, 17%));
     }
 
     h1,
@@ -183,7 +188,6 @@
         background-color: var(--_color-darkish);
         border: var(--_color-cornflowerblue) dashed 1px;
         border-radius: var(--space-s);
-        /*gradient*/
     }
 
     .box * {
@@ -311,7 +315,7 @@
         bottom: 0;
         width: 100vw;
         height: 15vh;
-        z-index: -1;
+
     }
 
     .swell>use {
