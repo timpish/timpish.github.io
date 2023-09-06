@@ -75,13 +75,6 @@
         }
     }
 
-    body {
-        background: linear-gradient(20deg, hsl(223, 64%, 1%), hsl(223, 74%, 6%), hsl(223, 84%, 11%), hsl(223, 64%, 1%), hsl(220, 48%, 9%), hsl(220, 48%, 2%), hsl(220, 48%, 19%), hsl(200, 68%, 19%));
-        /* background: linear-gradient(45deg, turquoise, darkorchid, deeppink, orange); */
-        /* background-image: linear-gradient(to bottom left in oklab, oklch(100% .5 109) 0%, oklch(72% .5 100) 100%);
-        background-image: linear-gradient(to bottom left, #ff0 0%, #f48b00 100%); */
-    }
-
     /* fonts */
     @font-face {
         font-family: Atkinson Hyperlegible;
