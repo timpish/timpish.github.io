@@ -107,6 +107,7 @@
         --type-xs: clamp(0.88rem, calc(0.74rem + 0.65vw), 1.25rem);
         --type-2xs: clamp(0.70rem, calc(0.60rem + 0.52vw), 1.00rem);
         --type-3xs: clamp(0.56rem, calc(0.48rem + 0.42vw), 0.80rem);
+
         --space-2xl: clamp(2.63rem, calc(2.23rem + 1.96vw), 3.75rem);
         --space-xl: clamp(1.75rem, calc(1.49rem + 1.30vw), 2.50rem);
         --space-l: clamp(1.31rem, calc(1.12rem + 0.98vw), 1.88rem);
@@ -311,31 +312,31 @@
         z-index: -1;
     }
 
-    .layers>use {
-        animation: swell 30s cubic-bezier(.65, .60, .55, .60) infinite;
+    .swell>use {
+        animation: swells 30s cubic-bezier(.65, .60, .55, .60) infinite;
     }
 
-    .layers>use:nth-child(1) {
+    .swell>use:nth-child(1) {
         animation-delay: -1s;
         animation-duration: 8s;
     }
 
-    .layers>use:nth-child(2) {
+    .swell>use:nth-child(2) {
         animation-delay: -2s;
         animation-duration: 11s;
     }
 
-    .layers>use:nth-child(3) {
+    .swell>use:nth-child(3) {
         animation-delay: -5s;
         animation-duration: 16s;
     }
 
-    .layers>use:nth-child(4) {
+    .swell>use:nth-child(4) {
         animation-delay: -6s;
         animation-duration: 19s;
     }
 
-    @keyframes swell {
+    @keyframes swells {
         0% {
             transform: translateX(90px);
         }
