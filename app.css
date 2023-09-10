@@ -1,4 +1,6 @@
-    /* https: //github.com/Andy-set-studio/modern-css-reset */
+    /* https://github.com/Andy-set-studio/modern-css-reset
+        <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css" /> */
     /* Box sizing rules */
     *,
     *::before,
@@ -93,6 +95,9 @@
         line-height: var(--ratio);
         --lead: var(--ratio);
         --measure: 30rem;
+        /* ch unit for measure? */
+        /* --_measure: var(--measure, 30rem); */
+        /* psuedo private props for all vars? */
         --lead-tight: calc(var(--lead) * 0.79);
         --lead-loose: calc(var(--lead) * var(--lead));
         --track-out: 0.125ch;
@@ -133,7 +138,7 @@
     }
 
     body {
-        background: linear-gradient(14deg, hsl(223, 64%, 9%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(220, 48%, 17%));
+        background: linear-gradient(14deg, hsl(223, 64%, 9%), hsl(223, 64%, 10%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(223, 64%, 11%), hsl(223, 64%, 12%), hsl(220, 48%, 17%));
     }
 
     h1,
@@ -241,7 +246,8 @@
 
     .switcher>* {
         flex-grow: 1;
-        flex-basis: calc(var(--measure) - 100%) * 999);
+        flex-basis: calc(var(--measure, 30rem) - 100% * 999);
+        /* flex-basis: calc(var(--measure) - 100% * 999); */
     }
 
     .switcher> :nth-last-child(n+ 4),
@@ -253,6 +259,7 @@
 
     .stretch {
         height: 97vh;
+        /* height: auto; */
     }
 
     .center {
