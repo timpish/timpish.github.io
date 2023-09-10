@@ -94,10 +94,7 @@
         --ratio: 1.25;
         line-height: var(--ratio);
         --lead: var(--ratio);
-        --measure: 40ch;
-        /* ch unit for measure? */
-        /* --_measure: var(--measure, 30rem); */
-        /* pseudo private props for all vars? */
+        --measure: 66ch;
         --lead-tight: calc(var(--lead) * 0.79);
         --lead-loose: calc(var(--lead) * var(--lead));
         --track-out: 0.125ch;
@@ -246,8 +243,7 @@
 
     .switcher>* {
         flex-grow: 1;
-        flex-basis: calc(var(--measure, 30rem) - 100% * 999);
-        /* flex-basis: calc(var(--measure) - 100% * 999); */
+        flex-basis: calc(var(--measure) - 100% * 999);
     }
 
     .switcher> :nth-last-child(n+ 4),
