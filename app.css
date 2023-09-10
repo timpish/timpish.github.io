@@ -94,10 +94,10 @@
         --ratio: 1.25;
         line-height: var(--ratio);
         --lead: var(--ratio);
-        --measure: 30rem;
+        --measure: 40ch;
         /* ch unit for measure? */
         /* --_measure: var(--measure, 30rem); */
-        /* psuedo private props for all vars? */
+        /* pseudo private props for all vars? */
         --lead-tight: calc(var(--lead) * 0.79);
         --lead-loose: calc(var(--lead) * var(--lead));
         --track-out: 0.125ch;
