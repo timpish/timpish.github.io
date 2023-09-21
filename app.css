@@ -111,7 +111,7 @@ textarea:not([rows]) {
         --font-body: Atkinson Hyperlegible, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
         --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, Monaco, ui-monospace, SF Mono, Droid Sans Mono, Source Code Pro, monospace;
         font-family: var(--font-body);
-        font-size: calc(.25vw + 1em);
+        font-size: calc(.25vw + 1rem);
         --ratio: 1.25;
         line-height: var(--ratio);
         --lead: var(--ratio);
