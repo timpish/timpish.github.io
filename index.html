@@ -1,71 +1,167 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="en">
 
-<title>Timothy Martens &#8211; Product Designer &amp; Design Technologist</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timothy Martens — Healthcare Experience Design & Strategy</title>
+    <style>
+        :where(html) {
+            color-scheme: dark light;
+            /* dark primitives */
+            --dark: var(--color-dark, black);
+            --foreground-1-d: var(--color-foregroundPrimaryDark, hsl(0 0% 70%));
+            --foreground-2-d: var(--color-foregroundSecondaryDark, hsl(0 0% 94%));
+            --background-1-d: var(--color-backgroundPrimaryDark, hsl(0, 0%, 4%));
+            /* light primitives */
+            --light: var(--color-light, white);
+            --foreground-1-l: var(--color-foregroundPrimaryLight, hsl(0 0% 30%));
+            --foreground-2-l: var(--color-foregroundSecondaryLight, hsl(0 0% 6%));
+            --background-1-l: var(--color-backgroundPrimaryLight, hsl(0 0% 96%));
+            /* theme tokens */
+            --dark-light: light-dark(var(--light), var(--dark));
+            --text-1: light-dark(var(--foreground-1-l), var(--foreground-1-d));
+            --text-2: light-dark(var(--foreground-2-l), var(--foreground-2-d));
+            --canvas-1: light-dark(var(--background-1-l), var(--background-1-d));
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="app.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
-<meta name="description" content="State of Play 🏄🏻‍♂️">
+            --stroke: 1px;
+        }
+
+        :where(*, ::after, ::before) {
+            /* color: black; */
+            box-sizing: border-box;
+            font-family: system-ui, sans-serif;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            background-color: var(--dark-light);
+            color: var(--text-1);
+        }
+
+        body {
+            animation: fade-in-focus cubic-bezier(0.39, 0.575, 0.565, 1) 600ms;
+            background: radial-gradient(rgba(102, 102, 102, 0.5) 20%, rgba(0, 0, 0, 0) 20%) repeat scroll 0% 0% / 4px 4px padding-box;
+            display: grid;
+            overflow: hidden;
+            place-content: center;
+            height: 100dvh;
+            width: 100dvw;
+            position: relative;
+        }
+
+        main {
+            background-color: var(--canvas-1);
+            border: 1px solid dimgray;
+            border-radius: 0.25rem;
+            padding: 0.75rem 1.0rem;
+            z-index: 1;
+        }
+
+        h1 {
+            color: var(--text-2);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--text-1);
+        }
+
+        .axis {
+            background-color: dimgray;
+            background-position: center;
+            position: absolute;
+        }
+
+        .x.axis {
+            background-size: 100% var(--stroke);
+            height: var(--stroke);
+            width: calc(100% - 2 * var(--stroke));
+            top: calc(50% - var(--stroke) / 2);
+            left: var(--stroke);
+        }
+
+        .y.axis {
+            background-size: var(--stroke) 100%;
+            height: calc(100% - 2 * var(--stroke));
+            width: var(--stroke);
+            top: var(--stroke);
+            left: calc(50% - var(--stroke) / 2);
+        }
+
+        .axis::before,
+        .axis::after {
+            --size: 20px;
+            --axis-offset: calc(-1 * var(--size) / 2 - var(--stroke) / 2);
+            --edge-offset: calc((sqrt(2) * var(--size)) / 2 - var(--size) / 2 - var(--stroke));
+            content: "";
+            position: absolute;
+            height: var(--size);
+            width: var(--size);
+            border: var(--stroke) solid dimgray;
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+        }
+
+        .x.axis::before {
+            left: var(--edge-offset);
+            top: var(--axis-offset);
+            rotate: 45deg;
+        }
+
+        .x.axis::after {
+            right: var(--edge-offset);
+            top: var(--axis-offset);
+            rotate: -135deg;
+        }
+
+        .y.axis::before {
+            top: var(--edge-offset);
+            left: var(--axis-offset);
+            rotate: 135deg;
+        }
+
+        .y.axis::after {
+            bottom: var(--edge-offset);
+            left: var(--axis-offset);
+            rotate: -45deg;
+        }
+
+        /* ampersand (&) small caps hack */
+        .amp {
+            font-size: 0.775em;
+            font-weight: var(--500-550);
+            font-weight: 500;
+        }
+
+        @keyframes fade-in-focus {
+            from {
+                filter: blur(3px);
+                opacity: 0;
+            }
+
+            to {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
 
 <body>
-    <div class="padding:s-m">
-        <div class="stretch">
-            <div class="stack">
-                <p class="box">timpish<span class="flourish">.</span>com</p>
-                <h1 class="box">Timothy Martens</h1>
-                <div class="box">
-                    <h2 class="center track-out margin-bottom:xs">HUMAN<span class="flourish">&#8208;</span>CENTERED</h2>
-                    <div class="switcher">
-                        <h2 class="box with-icon">
-                            <svg class="icon">
-                                <use href="#therefore"></use>
-                            </svg>
-                            Product&nbsp;Design
-                        </h2>
-                        <h2 class="box with-icon">
-                            <svg class="icon">
-                                <use href="#therefore"></use>
-                            </svg>
-                            Design&nbsp;Strategy
-                        </h2>
-                        <h2 class="box with-icon">
-                            <svg class="icon">
-                                <use href="#therefore"></use>
-                            </svg>
-                            Design&nbsp;Technology
-                        </h2>
-                    </div>
-                </div>
-                <p class="box"><a href="mailto:ui&#64;timpish.com?subject=Hello%20from%20timpish.com">ui<span class="flourish">&#64;</span>timpish<span class="flourish">.</span>com</a></p>
-                <h3 class="box">Status<span class="flourish"> &#61; </span><span class="play track-out"><span style="--a:1">P</span><span style="--a:2">L</span><span style="--a:3">A</span><span style="--a:4">Y</span><span style="--a:5">!</span><span style="--a:6">🏄🏻‍♂️</span></span>
-                </h3>
-            </div>
-        </div>
-    </div>
-
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" shape-rendering="auto" viewBox="0 24 150 28">
-        <symbol>
-            <defs>
-                <path id="wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
-            </defs>
-        </symbol>
-        <g class="swell">
-            <use xlink:href="#wave" x="48" y="1" fill="hsla(219, 79%, 66%,.2)" />
-            <use xlink:href="#wave" x="48" y="4" fill="hsla(219, 79%, 66%, .2)" />
-            <use xlink:href="#wave" x="48" y="6" fill="hsla(219, 79%, 66%, .1)" />
-            <use xlink:href="#wave" x="48" y="8" fill="hsla(219, 79%, 66%, .1)" />
-        </g>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <symbol id="therefore" viewBox="0 0 10 10" fill="var(--_color-yellowgreen)">
-            <circle cx="5" cy="3" r="2" />
-            <circle cx="2" cy="8" r="2" />
-            <circle cx="8" cy="8" r="2" />
-        </symbol>
-    </svg>
+    <main>
+        <h1>Timothy Martens</h1>
+        <h2>Experience design <span class="amp">&amp;</span> strategy <br>for healthcare transfomation</h2>
+        <h3><a href="mailto:product@timpish.com">product@timpish.com</a></h3>
+        <h3><a href="https://www.linkedin.com/in/timothyfmartens/">LinkedIn</a></h3>
+    </main>
+    <div class="x axis"></div>
+    <div class="y axis"></div>
 </body>
 
 </html>
